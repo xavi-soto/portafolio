@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilustracion</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o enlaces reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Contenedor principal centrado */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Cambiado para ajustar a contenido */
+            text-align: center;
+            padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+            margin-bottom: 80px; /* Espaciado en la parte inferior */
+            margin-top: 19px;
+        }
+
+        /* Encabezado de tres imágenes (siguiente, menú e instagram) */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 600px; /* Ancho máximo para pantallas grandes */
+            margin-bottom: -40px; /* Espaciado entre el encabezado y la imagen info */
+        }
+
+        .encabezado img {
+            width: 140%; /* Ajustar el tamaño según sea necesario */
+            max-width: 80px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imagen principal info1.png */
+        .info {
+            margin-bottom: 20px; /* Espacio debajo de la imagen principal */
+        }
+
+        .info img {
+            width: 300%; /* Ajustar tamaño de info1.png */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        /* Estilos del carrusel */
+        .carrusel {
+            position: relative;
+            width: 100%; /* Mismo tamaño que la imagen texto4-01 */
+            max-width: 300px; /* Limitar el tamaño máximo */
+            margin: 0 auto; /* Centrar el carrusel */
+            overflow: hidden; /* Ocultar imágenes fuera del contenedor */
+        }
+
+        .carrusel-imagen {
+            display: none; /* Ocultar todas las imágenes por defecto */
+            width: 100%; /* Asegurarse de que ocupen todo el ancho */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* Espacio entre el carrusel y los botones */
+            width: 100%; /* Ajustar al 100% */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .boton {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #7f8080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            flex: 1; /* Para que los botones ocupen espacio equitativo */
+            margin: 0 15px; /* Espaciado entre botones */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="logosmovil.html">
+                <img src="http://imgfz.com/i/LveNGoc.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="http://imgfz.com/i/SdFak8j.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="http://imgfz.com/i/f936b47.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <!-- Duplicación de la imagen principal y el carrusel (5 veces en total) -->
+        <div class="info">
+            <img src="http://imgfz.com/i/GMHar2x.png" alt="Info1" class="imagen" id="info1">
+        </div>
+        <div class="carrusel" id="carrusel1">
+            <img src="http://imgfz.com/i/Zmzip6Y.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/9wL0Zh3.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/LwQeZOF.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/fkmC6QA.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/6erpTzV.png" alt="Imagen 5" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/SgACR7x.png" alt="Imagen 6" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/Lx9yjbd.png" alt="Imagen 7" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/ZKkt7jl.png" alt="Imagen 8" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/vq2J853.png" alt="Imagen 9" class="carrusel-imagen">
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior">Anterior</button>
+            <button class="boton" id="siguienteBoton">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="http://imgfz.com/i/QoxJM5Y.png" alt="Info2" class="imagen" id="info2">
+        </div>
+        <div class="carrusel" id="carrusel2">
+            <img src="http://imgfz.com/i/PsuqIL3.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/8YFaj9u.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/z7sCigJ.png" alt="Imagen 3" class="carrusel-imagen">
+            
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior2">Anterior</button>
+            <button class="boton" id="siguienteBoton2">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="http://imgfz.com/i/KVcG1eE.png" alt="Info3" class="imagen" id="info3">
+        </div>
+        <div class="carrusel" id="carrusel3">
+            <img src="http://imgfz.com/i/TdL1gCI.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/QSCpczm.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/KxlaMq2.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/GNq8yXk.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/fY75Vt0.png" alt="Imagen 5" class="carrusel-imagen">
+        
+    
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior3">Anterior</button>
+            <button class="boton" id="siguienteBoton3">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="http://imgfz.com/i/Ra93eFQ.png" alt="Info4" class="imagen" id="info4">
+        </div>
+        <div class="carrusel" id="carrusel4">
+            <img src="http://imgfz.com/i/xVSvgmH.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/UNAGu5i.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/wh2E8KP.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/ykMXx91.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/RXVGbcI.png" alt="Imagen 5" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/Oq1LZIm.png" alt="Imagen 6" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/9DmYMrn.png" alt="Imagen 7" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/39JFYPk.png" alt="Imagen 8" class="carrusel-imagen">
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior4">Anterior</button>
+            <button class="boton" id="siguienteBoton4">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="http://imgfz.com/i/51vctUN.png" alt="Info5" class="imagen" id="info5">
+        </div>
+        <div class="carrusel" id="carrusel5">
+            <img src="http://imgfz.com/i/IF3kNKg.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/i2Nwaon.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/9ZP0rdE.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/YvACTF2.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/J58VOvg.png" alt="Imagen 5" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/rwbDVli.png" alt="Imagen 6" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/bci0kqI.png" alt="Imagen 7" class="carrusel-imagen">
+            <img src="http://imgfz.com/i/ODUWXvA.png" alt="Imagen 8" class="carrusel-imagen">
+        
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior5">Anterior</button>
+            <button class="boton" id="siguienteBoton5">Siguiente</button>
+        </div>
+    </main>
+
+    <script>
+        // Función para crear el carrusel
+        function crearCarrusel(carruselId, anteriorId, siguienteId) {
+            const carruselImagenes = document.querySelectorAll(`#${carruselId} .carrusel-imagen`);
+            const totalImagenes = carruselImagenes.length; // Total de imágenes en el carrusel
+            let indiceActual = 0;
+
+            // Mostrar la imagen inicial
+            carruselImagenes[indiceActual].style.display = 'block';
+
+            // Función para actualizar la visibilidad de las imágenes
+            function actualizarCarrusel() {
+                // Ocultar todas las imágenes
+                for (let i = 0; i < totalImagenes; i++) {
+                    carruselImagenes[i].style.display = 'none';
+                }
+                // Mostrar la imagen actual
+                carruselImagenes[indiceActual].style.display = 'block';
+            }
+
+            // Evento para el botón Siguiente
+            document.getElementById(siguienteId).addEventListener('click', () => {
+                indiceActual = (indiceActual + 1) % totalImagenes; // Aumenta el índice actual
+                actualizarCarrusel(); // Actualiza la posición del carrusel
+            });
+
+            // Evento para el botón Anterior
+            document.getElementById(anteriorId).addEventListener('click', () => {
+                indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes; // Disminuye el índice actual
+                actualizarCarrusel(); // Actualiza la posición del carrusel
+            });
+        }
+
+        // Crear los carruseles
+        crearCarrusel('carrusel1', 'anterior', 'siguienteBoton');
+        crearCarrusel('carrusel2', 'anterior2', 'siguienteBoton2');
+        crearCarrusel('carrusel3', 'anterior3', 'siguienteBoton3');
+        crearCarrusel('carrusel4', 'anterior4', 'siguienteBoton4');
+        crearCarrusel('carrusel5', 'anterior5', 'siguienteBoton5');
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que nos cuesta escuchar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Agregar estilos para el carrusel */
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Mantener centrado */
+            width: 30%; /* Asegúrate de que el carrusel tenga el mismo tamaño */
+            height: 600px; /* Ajusta esta altura según el tamaño de tus imágenes */
+            position: relative; /* Para posicionar las flechas */
+            overflow: hidden; /* Evitar que el contenido se desborde */
+        }
+
+        .carousel img, .carousel video {
+            width: 100%; /* Asegura que las imágenes y el video ocupen el 100% del espacio disponible */
+            height: auto;
+            object-fit: contain;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        /* Clase para personalizar el tamaño del video */
+        .custom-size {
+            width: 80%; /* Ajusta este valor según tus necesidades */
+            height: auto; /* Mantener el aspecto original */
+            max-width: 100%; /* Asegúrate de que no supere el tamaño del contenedor */
+            margin-left: 0px; /* Mueve el video hacia la derecha */
+        }
+
+        /* Asegura que el contenedor mantenga siempre el mismo tamaño */
+        .media-container {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="acerca.html"><img src="http://imgfz.com/i/2CJZNY5.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="http://imgfz.com/i/ATmi8xP.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"><img src="http://imgfz.com/i/nKIodPk.png" alt="Otra Imagen" class="image-top"></a> <!-- Nueva imagen -->
+        </div>
+
+        <!-- Segunda fila de imágenes grandes -->
+        <div class="row-full">
+            <img src="http://imgfz.com/i/yifKVdB.png" alt="Contenedor 1" class="image-full">
+            <img src="http://imgfz.com/i/GBoD4qz.png" alt="Contenedor 2" class="image-full">
+            <div class="carousel">
+                <button class="prev" onclick="changeMedia(-1)">&#10094;</button> <!-- Flecha izquierda -->
+                <div id="mediaContainer" class="media-container"></div> <!-- Contenedor para la imagen o video -->
+                <button class="next" onclick="changeMedia(1)">&#10095;</button> <!-- Flecha derecha -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de medios (imágenes y video)
+        const media = [ 
+            'http://imgfz.com/i/nyOxdTA.png',
+            'http://imgfz.com/i/MLES9iF.png',
+            'http://imgfz.com/i/2vlCUHw.png',
+            'http://imgfz.com/i/fwxcpmQ.png',
+            'http://imgfz.com/i/1ixakSH.png',
+            'http://imgfz.com/i/yHbZQlx.png',
+            'http://imgfz.com/i/1mS8Bwp.png',
+            'http://imgfz.com/i/deSjaE3.png',
+            'assets/t9.mp4' // Video añadido
+        ];
+
+        let currentIndex = 0;
+        const mediaContainer = document.getElementById('mediaContainer');
+
+        // Función para cambiar entre imágenes y video
+        function changeMedia(direction) {
+            currentIndex = (currentIndex + direction + media.length) % media.length; // Actualiza el índice
+            const currentMedia = media[currentIndex];
+
+            // Verifica si es un video o una imagen
+            if (currentMedia.endsWith('.mp4')) {
+                mediaContainer.innerHTML = `<video class="media-container custom-size" src="${currentMedia}" autoplay muted loop></video>`;
+            } else {
+                mediaContainer.innerHTML = `<img class="media-container" src="${currentMedia}" alt="Imagen carrusel">`;
+            }
+        }
+
+        // Inicializa con el primer elemento
+        changeMedia(0);
+
+        // Bloquear clic derecho en todas las imágenes y videos
+        document.addEventListener('contextmenu', function (event) {
+            if (event.target.tagName === 'IMG' || event.target.tagName === 'VIDEO') {
+                event.preventDefault(); // Evita que se abra el menú contextual en imágenes y videos
+            }
+        });
+    </script>
+</body>
+</html>
