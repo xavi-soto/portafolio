@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilustracion</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o enlaces reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Contenedor principal centrado */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Cambiado para ajustar a contenido */
+            text-align: center;
+            padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+            margin-bottom: 80px; /* Espaciado en la parte inferior */
+            margin-top: 19px;
+        }
+
+        /* Encabezado de tres imágenes (siguiente, menú e instagram) */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 600px; /* Ancho máximo para pantallas grandes */
+            margin-bottom: -40px; /* Espaciado entre el encabezado y la imagen info */
+        }
+
+        .encabezado img {
+            width: 140%; /* Ajustar el tamaño según sea necesario */
+            max-width: 80px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imagen principal info1.png */
+        .info {
+            margin-bottom: 20px; /* Espacio debajo de la imagen principal */
+        }
+
+        .info img {
+            width: 300%; /* Ajustar tamaño de info1.png */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        /* Estilos del carrusel */
+        .carrusel {
+            position: relative;
+            width: 100%; /* Mismo tamaño que la imagen texto4-01 */
+            max-width: 300px; /* Limitar el tamaño máximo */
+            margin: 0 auto; /* Centrar el carrusel */
+            overflow: hidden; /* Ocultar imágenes fuera del contenedor */
+        }
+
+        .carrusel-imagen {
+            display: none; /* Ocultar todas las imágenes por defecto */
+            width: 100%; /* Asegurarse de que ocupen todo el ancho */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* Espacio entre el carrusel y los botones */
+            width: 100%; /* Ajustar al 100% */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .boton {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #7f8080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            flex: 1; /* Para que los botones ocupen espacio equitativo */
+            margin: 0 15px; /* Espaciado entre botones */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="logosmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310302/76qgewM_syq3cn.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <!-- Duplicación de la imagen principal y el carrusel (5 veces en total) -->
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313175/GMHar2x_rpj64w.png" alt="Info1" class="imagen" id="info1">
+        </div>
+        <div class="carrusel" id="carrusel1">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313201/Zmzip6Y_etcsxz.jpg" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313225/9wL0Zh3_f9e1tc.jpg" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311372/LwQeZOF_fk9zld.jpg" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311391/fkmC6QA_hkwaes.jpg" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311425/6erpTzV_qdrczp.jpg" alt="Imagen 5" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311446/SgACR7x_ylupal.jpg" alt="Imagen 6" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311466/Lx9yjbd_y7grer.jpg" alt="Imagen 7" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311527/ZKkt7jl_shncdp.jpg" alt="Imagen 8" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311548/vq2J853_oto476.jpg" alt="Imagen 9" class="carrusel-imagen">
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior">Anterior</button>
+            <button class="boton" id="siguienteBoton">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313371/7GLIKge_y8vayn.png" alt="Info2" class="imagen" id="info2">
+        </div>
+        <div class="carrusel" id="carrusel2">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311572/PsuqIL3_uyvshj.jpg" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311591/8YFaj9u_xfxkxr.jpg" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311612/z7sCigJ_vqtfst.jpg" alt="Imagen 3" class="carrusel-imagen">
+            
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior2">Anterior</button>
+            <button class="boton" id="siguienteBoton2">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313444/OCxqREP_j5jisb.png" alt="Info3" class="imagen" id="info3">
+        </div>
+        <div class="carrusel" id="carrusel3">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313466/TdL1gCI_blxnkb.jpg" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313486/QSCpczm_exusfg.jpg" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311686/KxlaMq2_kckdtz.jpg" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311716/GNq8yXk_knl5gf.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311738/fY75Vt0_hfh2sn.png" alt="Imagen 5" class="carrusel-imagen">
+        
+    
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior3">Anterior</button>
+            <button class="boton" id="siguienteBoton3">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313578/4o5puYj_et8i8l.png" alt="Info4" class="imagen" id="info4">
+        </div>
+        <div class="carrusel" id="carrusel4">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313599/xVSvgmH_w6szdw.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311805/UNAGu5i_zkka5a.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311828/wh2E8KP_j3wlwj.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311850/ykMXx91_w7i93x.jpg" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311883/RXVGbcI_lfceoq.jpg" alt="Imagen 5" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311976/Oq1LZIm_si5g29.jpg" alt="Imagen 6" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740311997/9DmYMrn_azmwgn.jpg" alt="Imagen 7" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312019/39JFYPk_chidfo.jpg" alt="Imagen 8" class="carrusel-imagen">
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior4">Anterior</button>
+            <button class="boton" id="siguienteBoton4">Siguiente</button>
+        </div>
+
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313730/UMj97qN_bz4sg8.png" alt="Info5" class="imagen" id="info5">
+        </div>
+        <div class="carrusel" id="carrusel5">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312072/IF3kNKg_thvel3.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312130/i2Nwaon_gvlqye.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312169/9ZP0rdE_lq01hq.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312191/YvACTF2_zlka2x.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312297/J58VOvg_mh1max.png" alt="Imagen 5" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312319/rwbDVli_wcxa3t.png" alt="Imagen 6" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312461/bci0kqI_tatjpm.png" alt="Imagen 7" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312486/ODUWXvA_yvbfmm.png" alt="Imagen 8" class="carrusel-imagen">
+        
+        </div>
+        <div class="botones">
+            <button class="boton" id="anterior5">Anterior</button>
+            <button class="boton" id="siguienteBoton5">Siguiente</button>
+        </div>
+    </main>
+
+    <script>
+        // Función para crear el carrusel
+        function crearCarrusel(carruselId, anteriorId, siguienteId) {
+            const carruselImagenes = document.querySelectorAll(`#${carruselId} .carrusel-imagen`);
+            const totalImagenes = carruselImagenes.length; // Total de imágenes en el carrusel
+            let indiceActual = 0;
+
+            // Mostrar la imagen inicial
+            carruselImagenes[indiceActual].style.display = 'block';
+
+            // Función para actualizar la visibilidad de las imágenes
+            function actualizarCarrusel() {
+                // Ocultar todas las imágenes
+                for (let i = 0; i < totalImagenes; i++) {
+                    carruselImagenes[i].style.display = 'none';
+                }
+                // Mostrar la imagen actual
+                carruselImagenes[indiceActual].style.display = 'block';
+            }
+
+            // Evento para el botón Siguiente
+            document.getElementById(siguienteId).addEventListener('click', () => {
+                indiceActual = (indiceActual + 1) % totalImagenes; // Aumenta el índice actual
+                actualizarCarrusel(); // Actualiza la posición del carrusel
+            });
+
+            // Evento para el botón Anterior
+            document.getElementById(anteriorId).addEventListener('click', () => {
+                indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes; // Disminuye el índice actual
+                actualizarCarrusel(); // Actualiza la posición del carrusel
+            });
+        }
+
+        // Crear los carruseles
+        crearCarrusel('carrusel1', 'anterior', 'siguienteBoton');
+        crearCarrusel('carrusel2', 'anterior2', 'siguienteBoton2');
+        crearCarrusel('carrusel3', 'anterior3', 'siguienteBoton3');
+        crearCarrusel('carrusel4', 'anterior4', 'siguienteBoton4');
+        crearCarrusel('carrusel5', 'anterior5', 'siguienteBoton5');
+        <!-- JavaScript para evitar el menú contextual en imágenes -->
+   
+        // Selecciona todas las imágenes
+        const images = document.querySelectorAll('img');
+
+        // Añade un event listener para evitar la descarga con pulsación larga
+        images.forEach(image => {
+            image.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Desactiva el menú contextual en imágenes
+            });
+        });
+    </script>
+</body>
+</html>

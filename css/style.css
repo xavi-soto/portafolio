@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white !important;
+    color: black !important; /* Asegura que el texto no se vuelva blanco */
+    background-image: url('assets/fondo.png'); /* Imagen de fondo */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Para alinear el contenido en el centro */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    padding: 60px;
+    margin-top: -10px; /* Mueve todo el contenido hacia abajo */
+}
+
+/* Fila con 3 imágenes pequeñas (pie de página) */
+.row-top {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre las imágenes */
+    margin-bottom: -20px; /* Espacio debajo de esta fila */
+}
+
+.image-top {
+    max-width: 110px;  /* Tamaño más pequeño para las imágenes del pie de página */
+    width: auto;
+    height: auto;
+    padding-left: 26px;
+}
+
+/* Fila con 3 imágenes grandes como el contenedor principal */
+.row-full {
+    display: flex;
+    justify-content: center; /* Centrar las imágenes */
+    width: 100%;
+    gap: 10px; /* Espacio entre las imágenes */
+    margin-top: 89px; /* Se reduce el margen superior para subir las imágenes */
+}
+
+/* Ajustar las imágenes específicas a tamaño pequeño */
+.image-full {
+    width: 30%; /* Mantiene el tamaño original para las imágenes más grandes */
+    height: auto;
+    object-fit: contain; /* Asegura que las imágenes mantengan sus proporciones */
+}
+.column {
+    display: flex;
+    flex-direction: column; /* Apila las imágenes verticalmente */
+    align-items: center;    /* Centra las imágenes horizontalmente */
+    gap: 10px;              /* Espacio entre las imágenes */
+}
+/* Nueva clase para las imágenes que se quieren hacer más pequeñas */
+.image-small {
+    max-width: 200px; /* Tamaño pequeño para las imágenes específicas */
+    
+    height: 100px;
+}
+.image-small2 {
+    max-width: 500px; /* Tamaño pequeño para las imágenes específicas */
+    
+    height: 500px;
+}
+.image-small3 {
+    max-width: 300px; /* Tamaño pequeño para las imágenes específicas */
+    
+    height: 200px;
+}
+
+
+/* Estilos de la página de inicio */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre imágenes */
+    margin-bottom: 4px; /* Aumenta el espacio debajo de esta fila */
+    margin-top: 40px; /* Mueve esta fila hacia abajo */
+}
+
+.image {
+    max-width: 150px;  
+    max-height: 150px; 
+    width: auto;       
+    height: auto;      
+    object-fit: contain; 
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Cursor personalizado */
+#customCursor {
+    position: fixed;
+    width: 141px; /* Ancho del cursor */
+    height: 95px; /* Altura del cursor */
+    background-image: url('assets/click.png'); /* Ruta de la imagen del cursor */
+    background-size: cover;
+    pointer-events: none; 
+    z-index: 9999; 
+    display: none; /* Ocultarlo inicialmente */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .image {
+        max-width: 80%; 
+        height: auto; 
+    }
+    
+    .row-full {
+        flex-direction: column; /* Las imágenes grandes se apilan verticalmente en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .image-full, .image-small {
+        width: 90%; /* Ajusta el tamaño para pantallas pequeñas */
+        height: auto;
+    }
+}
+
+
