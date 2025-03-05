@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desoido</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+        }
+
+        a {
+            outline: none;
+        }
+
+        a:focus, img:focus {
+            outline: none;
+        }
+
+        img, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 80px;
+            margin-top: 19px;
+        }
+
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: -40px;
+        }
+
+        .encabezado img {
+            width: 140%;
+            max-width: 80px;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+        .info img {
+            width: 300%;
+            max-width: 300px;
+        }
+
+        .carrusel {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carrusel-imagen, .carrusel-video {
+            display: none;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Estilo para video en el carrusel */
+        .carrusel-video {
+            /* Puedes personalizar el tamaño y posición aquí */
+            width: 100%;
+            max-width: 300px;
+            object-fit: contain; /* Mantiene las proporciones del video */
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .boton {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #7f8080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            flex: 1;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="porquemovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310302/76qgewM_syq3cn.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320512/aiwmKWg_ibexce.png" alt="Info1" class="imagen" id="info1">
+        </div>
+        <iframe class="carrusel-video" 
+        src="https://streamable.com/e/1bmuva?autoplay=1" 
+        width="100%" 
+        height="425" 
+        frameborder="0" 
+        allow="fullscreen; autoplay" 
+        allowfullscreen>
+</iframe>
+        <!-- Carrusel de imágenes y video -->
+<div class="carrusel">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320543/hUAtEax_nkzzys.jpg" alt="Imagen 1" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319736/P7mivgI_pzmsps.jpg" alt="Imagen 2" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319761/cC0jZHF_w6soa8.jpg" alt="Imagen 3" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319785/Sqbt2cm_ldwt7h.jpg" alt="Imagen 4" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319833/jXqi9FL_cp2w5s.jpg" alt="Imagen 5" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319886/hwPY1TS_tistca.jpg" alt="Imagen 6" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319934/6UGQ8mx_wpgdzs.jpg" alt="Imagen 7" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320026/wlu7aDc_xtfomy.jpg" alt="Imagen 8" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320051/4J0hqcO_jrsdrf.jpg" alt="Imagen 9" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320074/DM1pXbs_rehmxw.jpg" alt="Imagen 10" class="carrusel-imagen">
+    <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320117/OFZyrhG_dvu7um.jpg" alt="Imagen 11" class="carrusel-imagen">
+
+
+</div>
+
+        <div class="botones">
+            <button class="boton" id="anterior">Anterior</button>
+            <button class="boton" id="siguienteBoton">Siguiente</button>
+        </div>
+    </main>
+
+    <script>
+        const carruselElementos = document.querySelectorAll('.carrusel-imagen, .carrusel-video');
+        const totalElementos = carruselElementos.length;
+        let indiceActual = 0;
+
+        // Mostrar el primer elemento
+        carruselElementos[indiceActual].style.display = 'block';
+
+        // Función para actualizar el carrusel
+        function actualizarCarrusel() {
+            for (let i = 0; i < totalElementos; i++) {
+                carruselElementos[i].style.display = 'none';
+            }
+            carruselElementos[indiceActual].style.display = 'block';
+        }
+
+        document.getElementById('siguienteBoton').addEventListener('click', () => {
+            indiceActual = (indiceActual + 1) % totalElementos;
+            actualizarCarrusel();
+        });
+
+        document.getElementById('anterior').addEventListener('click', () => {
+            indiceActual = (indiceActual - 1 + totalElementos) % totalElementos;
+            actualizarCarrusel();
+        });
+    
+        // Selecciona todas las imágenes
+        const images = document.querySelectorAll('img');
+
+        // Añade un event listener para evitar la descarga con pulsación larga
+        images.forEach(image => {
+            image.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Desactiva el menú contextual en imágenes
+            });
+        });
+
+    </script>
+</body>
+</html>
