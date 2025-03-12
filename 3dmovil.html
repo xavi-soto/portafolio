@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o enlaces reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Contenedor principal centrado */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Cambiado para ajustar a contenido */
+            text-align: center;
+            padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+            margin-bottom: 80px; /* Espaciado en la parte inferior */
+            margin-top: 19px;
+        }
+
+        /* Encabezado de tres imágenes (siguiente, menú e instagram) */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 600px; /* Ancho máximo para pantallas grandes */
+            margin-bottom: -40px; /* Espaciado entre el encabezado y la imagen info */
+        }
+
+        .encabezado img {
+            width: 140%; /* Ajustar el tamaño según sea necesario */
+            max-width: 80px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imagen principal info1.png */
+        .info {
+            margin-bottom: 20px; /* Espacio debajo de la imagen principal */
+        }
+
+        .info img {
+            width: 300%; /* Ajustar tamaño de info1.png */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        /* Estilos del carrusel */
+        .carrusel {
+            position: relative;
+            width: 100%; /* Mismo tamaño que la imagen texto4-01 */
+            max-width: 300px; /* Limitar el tamaño máximo */
+            margin: 0 auto; /* Centrar el carrusel */
+            overflow: hidden; /* Ocultar imágenes fuera del contenedor */
+        }
+
+        .carrusel-imagen {
+            display: none; /* Ocultar todas las imágenes por defecto */
+            width: 100%; /* Asegurarse de que ocupen todo el ancho */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* Espacio entre el carrusel y los botones */
+            width: 100%; /* Ajustar al 100% */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .boton {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #7f8080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            flex: 1; /* Para que los botones ocupen espacio equitativo */
+            margin: 0 15px; /* Espaciado entre botones */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="desoidomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310302/76qgewM_syq3cn.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <!-- Imagen principal info5-01.png -->
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318987/CqXsfQW_ipfigo.png" alt="Info1" class="imagen" id="info1">
+        </div>
+
+        <!-- Carrusel de imágenes -->
+        <div class="carrusel" id="carrusel1">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319024/aQ921Lb_u73gyj.png" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319079/zoW3fDd_d7tiry.png" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318532/D8qKwkg_aliqu9.png" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318558/IYdmXHg_hvmgfn.png" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318582/bNUS4tK_voitdy.png" alt="Imagen 5" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318624/h6kiQKr_cihlcq.png" alt="Imagen 6" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318649/YfxdAKI_qvphc5.png" alt="Imagen 7" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318672/dICNWo9_hgvhrp.png" alt="Imagen 8" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318742/k8z2ixR_yufhmt.png" alt="Imagen 9" class="carrusel-imagen">
+           
+        </div>
+
+        <!-- Botones para controlar el primer carrusel -->
+        <div class="botones">
+            <button class="boton" id="anterior">Anterior</button>
+            <button class="boton" id="siguienteBoton">Siguiente</button>
+        </div>
+
+        <!-- Segunda imagen principal texto5-01.png (duplicada) -->
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319241/bX193UM_e4l5gk.png" alt="Info2" class="imagen" id="info2">
+        </div>
+
+        <!-- Segundo carrusel de imágenes (duplicado) -->
+        <div class="carrusel" id="carrusel2">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319280/dkwDp7e_ikh3z9.png" alt="Imagen 9" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740319307/IFcsS89_vn609w.png" alt="Imagen 9" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318817/QPGj08m_iguedr.png" alt="Imagen 9" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318842/Uhikefc_xqurrr.png" alt="Imagen 9" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740318867/IuJT0pZ_vtcv8t.png" alt="Imagen 9" class="carrusel-imagen">
+        </div>
+
+        <!-- Botones para controlar el segundo carrusel -->
+        <div class="botones">
+            <button class="boton" id="anterior2">Anterior</button>
+            <button class="boton" id="siguienteBoton2">Siguiente</button>
+        </div>
+    </main>
+
+    <script>
+        // Script para el primer carrusel
+        const carruselImagenes = document.querySelectorAll('#carrusel1 .carrusel-imagen');
+        const totalImagenes = carruselImagenes.length; // Total de imágenes en el primer carrusel
+        let indiceActual = 0;
+
+        // Mostrar la imagen inicial
+        carruselImagenes[indiceActual].style.display = 'block';
+
+        // Función para actualizar la visibilidad de las imágenes
+        function actualizarCarrusel() {
+            // Ocultar todas las imágenes
+            for (let i = 0; i < totalImagenes; i++) {
+                carruselImagenes[i].style.display = 'none';
+            }
+            // Mostrar la imagen actual
+            carruselImagenes[indiceActual].style.display = 'block';
+        }
+
+        // Evento para el botón Siguiente
+        document.getElementById('siguienteBoton').addEventListener('click', () => {
+            indiceActual = (indiceActual + 1) % totalImagenes; // Aumenta el índice actual
+            actualizarCarrusel(); // Actualiza la posición del carrusel
+        });
+
+        // Evento para el botón Anterior
+        document.getElementById('anterior').addEventListener('click', () => {
+            indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes; // Disminuye el índice actual
+            actualizarCarrusel(); // Actualiza la posición del carrusel
+        });
+
+        // Script para el segundo carrusel
+        const carruselImagenes2 = document.querySelectorAll('#carrusel2 .carrusel-imagen');
+        const totalImagenes2 = carruselImagenes2.length; // Total de imágenes en el segundo carrusel
+        let indiceActual2 = 0;
+
+        // Mostrar la imagen inicial del segundo carrusel
+        carruselImagenes2[indiceActual2].style.display = 'block';
+
+        // Función para actualizar la visibilidad de las imágenes del segundo carrusel
+        function actualizarCarrusel2() {
+            // Ocultar todas las imágenes del segundo carrusel
+            for (let i = 0; i < totalImagenes2; i++) {
+                carruselImagenes2[i].style.display = 'none';
+            }
+            // Mostrar la imagen actual del segundo carrusel
+            carruselImagenes2[indiceActual2].style.display = 'block';
+        }
+
+        // Evento para el botón Siguiente del segundo carrusel
+        document.getElementById('siguienteBoton2').addEventListener('click', () => {
+            indiceActual2 = (indiceActual2 + 1) % totalImagenes2; // Aumenta el índice actual del segundo carrusel
+            actualizarCarrusel2(); // Actualiza la posición del segundo carrusel
+        });
+
+        // Evento para el botón Anterior del segundo carrusel
+        document.getElementById('anterior2').addEventListener('click', () => {
+            indiceActual2 = (indiceActual2 - 1 + totalImagenes2) % totalImagenes2; // Disminuye el índice actual del segundo carrusel
+            actualizarCarrusel2(); // Actualiza la posición del segundo carrusel
+        });
+
+        // Selecciona todas las imágenes
+        const images = document.querySelectorAll('img');
+
+        // Añade un event listener para evitar la descarga con pulsación larga
+        images.forEach(image => {
+            image.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Desactiva el menú contextual en imágenes
+            });
+        });
+
+    </script>
+</body>
+</html>

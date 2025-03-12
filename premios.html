@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premios</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Agregar estilos para el carrusel */
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%; /* Asegúrate de que el carrusel tenga el mismo tamaño */
+            position: relative; /* Para posicionar las flechas */
+        }
+
+        .carousel img {
+            width: 100%; /* Para asegurarte de que la imagen ocupe todo el espacio */
+            height: auto;
+            object-fit: contain;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+    
+    <script>
+        // Función para detectar si es móvil
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+        }
+
+        // Redirección a la versión móvil si es necesario
+        if (isMobile()) {
+            window.location.href = "premiosmovil.html"; // Redireccionar a premiosmovil.html
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="3d.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310637/76qgewM_zivcau.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Otra Imagen" class="image-top"></a>
+        </div>
+        <!-- Segunda fila de imágenes grandes -->
+        <div class="row-full">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740317119/HSmtVFw_xpuqcp.png" alt="Contenedor 1" class="image-full">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740317147/jz9a0Kq_bz0wya.png" alt="Contenedor 2" class="image-full">
+            <div class="carousel">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button> <!-- Flecha izquierda -->
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740317173/6TQjCcD_ujnspi.jpg" alt="Contenedor 3" class="image-full" id="imageChanger"> <!-- Imagen que cambia -->
+                <button class="next" onclick="changeImage(1)">&#10095;</button> <!-- Flecha derecha -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de imágenes
+        const images = [
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317198/6TQjCcD_ojzxcy.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317220/BFI5tAs_bdq1zd.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317268/Dk4WYBG_pcru7y.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317296/inRvJq7_otktoh.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317320/ANS3o1n_cqpxiv.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317343/fyjUHk2_sj66yv.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317364/0GaOuys_yozlfo.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317403/NLShgEd_nazeeb.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317425/KX7H6nk_mnowvt.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317450/1Zuotw4_bhnwcq.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317475/zxW4dDI_zl5wxy.png',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740317497/K3FELhm_wiuv9z.png'
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.getElementById('imageChanger');
+
+        // Función para cambiar la imagen
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length; // Actualiza el índice
+            imgElement.src = images[currentIndex]; // Cambia la fuente de la imagen
+        }
+
+        // Bloquear clic derecho en todas las imágenes
+        document.addEventListener('contextmenu', function (event) {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault(); // Evita que se abra el menú contextual en las imágenes
+            }
+        });
+    </script>
+</body>
+</html>

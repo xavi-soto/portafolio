@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chingaderas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Agregar estilos para el carrusel */
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%; /* Asegúrate de que el carrusel tenga el mismo tamaño */
+            position: relative; /* Para posicionar las flechas */
+        }
+
+        .carousel img {
+            width: 100%; /* Para asegurarte de que la imagen ocupe todo el espacio */
+            height: auto;
+            object-fit: contain;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+    </style>
+
+    <script>
+        // Función para detectar si es móvil
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+        }
+
+        // Redirección a la versión móvil si es necesario
+        if (isMobile()) {
+            window.location.href = "artemovil.html"; // Redireccionar a artemovil.html
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="ilusmenu.html"><img src="http://imgfz.com/i/76qgewM.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="http://imgfz.com/i/D95CI02.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"target="_blank"><img src="http://imgfz.com/i/xrVCTs5.png" alt="Otra Imagen" class="image-top"></a>
+        </div>
+
+        <!-- Segunda fila de imágenes grandes -->
+        <div class="row-full">
+            <img src="http://imgfz.com/i/TBfkYWF.png" alt="Contenedor 1" class="image-full">
+            <img src="http://imgfz.com/i/0koZcfW.png" alt="Contenedor 2" class="image-full">
+            <div class="carousel">
+                <button class="prev" onclick="changeImage(-1)">&#10094;</button> <!-- Flecha izquierda -->
+                <img src="http://imgfz.com/i/vVOYhBf.png" alt="Contenedor 3" class="image-full" id="imageChanger"> <!-- Imagen que cambia -->
+                <button class="next" onclick="changeImage(1)">&#10095;</button> <!-- Flecha derecha -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de imágenes
+        const images = [
+            'http://imgfz.com/i/vVOYhBf.png',
+            'http://imgfz.com/i/yrtEhPa.png',
+            'http://imgfz.com/i/RvuPnCo.png',
+            'http://imgfz.com/i/4qMSy6P.png',
+            'http://imgfz.com/i/moIF7le.png',
+            'http://imgfz.com/i/ERr8bx5.png',
+            'http://imgfz.com/i/nycuxfE.png',
+            'http://imgfz.com/i/nKfpUPZ.png'
+        ];
+
+        let currentIndex = 0;
+        const imgElement = document.getElementById('imageChanger');
+
+        // Función para cambiar la imagen
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length; // Actualiza el índice
+            imgElement.src = images[currentIndex]; // Cambia la fuente de la imagen
+        }
+
+        // Bloquear clic derecho en todas las imágenes
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault(); // Evita que aparezca el menú del clic derecho
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes con URLs Externas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos generales para centrar las imágenes */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        /* Contenedor para la imagen única debajo */
+        .single-image {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* Estilos específicos para cada imagen */
+        .img1, .img2, .img3, .img4, .img5 {
+            width: 260px;
+            height: 370px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Efecto de zoom al pasar el mouse */
+        .img1:hover, .img2:hover, .img3:hover, .img4:hover, .img5:hover {
+            transform: scale(1);
+        }
+
+        /* Estilo para la imagen única */
+        .single-image img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="logos.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310637/76qgewM_zivcau.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Otra Imagen" class="image-top"></a>
+        </div>
+    <div class="gallery">
+        <!-- Imagen 1 con enlace a una página HTML -->
+        <a href="hayflores.html">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312662/Zmzip6Y_zfoive.jpg" class="img1" alt="Ilustración 1" 
+                 onmouseover="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312705/MiInbsk_uvwdni.png')" 
+                 onmouseout="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312740/Zmzip6Y_chjcvq.jpg')">
+        </a>
+
+        <!-- Imagen 2 con enlace a una página HTML -->
+        <a href="inmenso.html">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312764/PsuqIL3_qw5tsc.jpg" class="img2" alt="Ilustración 2" 
+                 onmouseover="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312790/zZHUT3f_sfs0e9.png')" 
+                 onmouseout="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312764/PsuqIL3_qw5tsc.jpg')">
+        </a>
+
+        <!-- Imagen 3 con enlace a una página HTML -->
+        <a href="descripcion.html">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312812/TdL1gCI_pn11yp.jpg" class="img3" alt="Ilustración 3" 
+                 onmouseover="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312849/CMEQlaw_sproho.png')" 
+                 onmouseout="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312812/TdL1gCI_pn11yp.jpg')">
+        </a>
+
+        <!-- Imagen 4 con enlace a una página HTML -->
+        <a href="algunas.html">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312873/xVSvgmH_gczawy.png" class="img4" alt="Ilustración 4" 
+                 onmouseover="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312901/4ylAnZI_hzzspr.png')" 
+                 onmouseout="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312873/xVSvgmH_gczawy.png')">
+        </a>
+
+        <!-- Imagen 5 con enlace a una página HTML -->
+        <a href="apariencias.html">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740312935/IF3kNKg_iykgzn.png" class="img5" alt="Ilustración 5" 
+                 onmouseover="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312959/zqkKM5s_jquy04.png')" 
+                 onmouseout="changeImage(this, 'https://res.cloudinary.com/dbwezmju6/image/upload/v1740312935/IF3kNKg_iykgzn.png')">
+        </a>
+    </div>
+
+    <!-- Nueva imagen única centrada debajo -->
+    <div class="single-image">
+        <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740313037/zJY9MxK_xq9qpv.png" alt="Imagen única">
+    </div>
+
+    <script>
+        // Función para cambiar la imagen al pasar el mouse
+        function changeImage(element, newSrc) {
+            element.src = newSrc;
+        }
+    </script>
+
+</body>
+</html>

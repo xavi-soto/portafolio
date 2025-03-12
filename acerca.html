@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de mi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .row-full {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            
+            .image-full,
+            .image-small,
+            .image-small2 {
+                margin: 0 10px;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+    <script>
+        // Función para detectar si es móvil
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+        }
+
+        // Redirección a la versión móvil si es necesario
+        if (isMobile()) {
+            window.location.href = "acercamovil.html"; // Redireccionar a acercamovil.html
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="ilustracion.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309948/76qgewM_tjaw5j.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Otra Imagen" class="image-top"></a>
+        </div>
+
+        <!-- Segunda fila de imágenes grandes -->
+        <div class="row-full">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310043/4ye6pCI_jwwhbs.png" alt="Contenedor 1" class="image-full">
+            <a href="https://drive.google.com/file/d/1v2LUtZB6JY33qnT-Qt_oFQA7FhEYlYQT/view?usp=sharing" target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310081/8b3lGaH_x9z100.png" alt="Contenedor 2" class="image-small"></a> <!-- Link al archivo PDF -->
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310134/RXy78Zl_iajkmt.png" alt="Contenedor 3" class="image-small2">
+        </div>
+        
+        <!-- Nueva fila para las imágenes adicionales (debajo de contacto.png) -->
+        <div class="row-full">
+            <a href="mailto:cmartinz1995@gmail.com" target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310189/j0K3bXR_def0bm.png" alt="Correo" class="image-small3"></a> <!-- Link de correo electrónico -->
+            <a href="https://www.linkedin.com/in/xavier-sotoo/" target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310209/8dtkSv1_ajadil.png" alt="Link" class="image-small3"></a> <!-- Link externo -->
+            <a href="https://www.behance.net/xaviersoto" target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310233/OGz8jrX_rkkehg.png" alt="Behance" class="image-small3"></a> <!-- Link a Behance -->
+        </div>
+    </div>
+    
+    <script>
+        // Bloquear clic derecho en todas las imágenes
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault(); // Evita que aparezca el menú del clic derecho
+            }
+        });
+    </script>
+</body>
+</html>

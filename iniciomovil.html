@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o enlaces reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Animación de aparición suave */
+        @keyframes mostrarImagenes {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Imágenes ocultas inicialmente */
+        .imagen-superior {
+            width: 100px;
+            max-width: 100%;
+            height: auto;
+            opacity: 0; /* Inicia invisible */
+            display: block; /* Asegura que no se muevan en línea */
+            margin: 0 auto; /* Centradas horizontalmente */
+        }
+
+        /* Imágenes visibles después de la animación */
+        .visible {
+            animation: mostrarImagenes 1s ease forwards; /* Animación de aparición */
+            opacity: 1; /* Se mantienen visibles */
+        }
+
+        /* Ajustes generales del body para evitar el scroll */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Contenedor con estilo centrado para imágenes */
+        .contenedor {
+            display: grid;
+            place-items: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .imagenes-llaves {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Para distribuir las imágenes en 3 columnas */
+            gap: 8px; /* Espacio entre las imágenes */
+            margin-top: -12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Contenedor para las llaves -->
+        <div class="imagenes-llaves">
+            <a href="acercamovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740308888/o4PmMYL_k3xlj1.png" alt="Imagen de llave 1" class="imagen imagen-superior" id="llave1">
+            </a>
+            <a href="https://chingaderasdesoto.com/"target="_blank">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740308919/KPeWOyu_wnrrl8.png" alt="Imagen de llave 2" class="imagen imagen-superior" id="llave2">
+            </a>
+            <a href="ilusmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740308940/IJKoXLv_j7uljk.png" alt="Imagen de llave 3" class="imagen imagen-superior" id="llave3">
+            </a>
+            <a href="logosmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740308966/7zwuAmT_ztrpza.png" alt="Imagen de llave 4" class="imagen imagen-superior" id="llave4">
+            </a>
+            <a href="identidadmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740308989/238Jd4h_tfwfuj.png" alt="Imagen de llave 5" class="imagen imagen-superior" id="llave5">
+            </a>
+            <a href="premiosmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309018/TPr3sld_wxiio7.png" alt="Imagen de llave 6" class="imagen imagen-superior" id="llave6">
+            </a>
+            <a href="3dmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309039/YK8cGtI_onsjv8.png" alt="Imagen de llave 7" class="imagen imagen-superior" id="llave7">
+            </a>
+            <a href="desoidomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309057/bkfcht9_mhjtpy.png" alt="Imagen de llave 8" class="imagen imagen-superior" id="llave8">
+            </a>
+            <a href="porquemovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309075/bl7zqWu_r4zmfu.png" alt="Imagen de llave 9" class="imagen imagen-superior" id="llave9">
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Deshabilitar el clic derecho para evitar guardar imágenes
+        document.addEventListener('contextmenu', function(event) {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault();
+            }
+        });
+
+        // Ciclo para mostrar las imágenes con la animación, manteniéndolas visibles
+        const imagenes = document.querySelectorAll('.imagen-superior');
+        let imagenActual = 0;
+
+        function mostrarImagen() {
+            // Mostrar la imagen actual con animación
+            imagenes[imagenActual].classList.add('visible');
+
+            // Incrementar el índice de la imagen actual
+            imagenActual++;
+
+            // Si quedan más imágenes, mostrar la siguiente después de 3 segundos
+            if (imagenActual < imagenes.length) {
+                setTimeout(mostrarImagen, 600); // 0.6 segundos entre cada imagen
+            }
+        }
+
+        // Comenzar el ciclo de mostrar imágenes cuando la página carga
+        window.onload = mostrarImagen;
+    </script>
+</body>
+</html>

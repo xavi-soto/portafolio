@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que nos cuesta escuchar</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img, video {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes y videos */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus, video:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o videos reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, video, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Contenedor principal centrado */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Cambiado para ajustar a contenido */
+            text-align: center;
+            padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+            margin-bottom: 80px; /* Espaciado en la parte inferior */
+            margin-top: 19px;
+        }
+
+        /* Encabezado de tres imágenes (siguiente, menú e instagram) */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 600px; /* Ancho máximo para pantallas grandes */
+            margin-bottom: -40px; /* Espaciado entre el encabezado y la imagen info */
+        }
+
+        .encabezado img {
+            width: 140%; /* Ajustar el tamaño según sea necesario */
+            max-width: 80px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imagen principal info1.png */
+        .info {
+            margin-bottom: 20px; /* Espacio debajo de la imagen principal */
+        }
+
+        .info img {
+            width: 300%; /* Ajustar tamaño de info1.png */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        /* Estilos del carrusel */
+        .carrusel {
+            position: relative;
+            width: 100%; /* Mismo tamaño que la imagen texto4-01 */
+            max-width: 300px; /* Limitar el tamaño máximo */
+            margin: 0 auto; /* Centrar el carrusel */
+            overflow: hidden; /* Ocultar imágenes fuera del contenedor */
+        }
+
+        .carrusel-imagen, .carrusel-video {
+            display: none; /* Ocultar todas las imágenes y el video por defecto */
+            width: 100%; /* Asegurarse de que ocupen todo el ancho */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .carrusel-video {
+            max-height: 100%; /* Asegurarse de que el video no se salga del contenedor */
+        }
+
+        /* Opcional: Permitir modificar el tamaño y la posición del video */
+        .carrusel-video {
+            object-fit: contain; /* Asegura que el video se ajuste dentro del contenedor sin distorsión */
+        }
+
+        .botones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px; /* Espacio entre el carrusel y los botones */
+            width: 100%; /* Ajustar al 100% */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        .boton {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #7f8080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 10px;
+            flex: 1; /* Para que los botones ocupen espacio equitativo */
+            margin: 0 15px; /* Espaciado entre botones */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="acercamovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310637/76qgewM_zivcau.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <!-- Imagen principal info1.png -->
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321165/ShWLiFE_vkv5g4.png" alt="Info1" class="imagen" id="info1">
+        </div>
+<!-- Video dentro del carrusel usando un iframe -->
+<iframe class="carrusel-video" 
+src="https://streamable.com/e/wq4xzn?autoplay=1" 
+width="100%" 
+height="315" 
+frameborder="0" 
+allow="fullscreen; autoplay" 
+allowfullscreen>
+</iframe>
+        <!-- Carrusel de imágenes y video -->
+        <div class="carrusel">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321227/nyOxdTA_fiktlt.jpg" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320851/MLES9iF_xrqdbw.jpg" alt="Imagen 1" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320894/2vlCUHw_rk0krc.jpg" alt="Imagen 2" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320921/fwxcpmQ_ifevit.jpg" alt="Imagen 3" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320990/1ixakSH_pkqkts.jpg" alt="Imagen 4" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321014/yHbZQlx_v8frta.jpg" alt="Imagen 5" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321038/1mS8Bwp_kupnsa.jpg" alt="Imagen 6" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321350/deSjaE3_sjozsc.jpg" alt="Imagen 7" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321385/yhQmdMR_gbaioj.jpg" alt="Imagen 8" class="carrusel-imagen">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740321417/G7trske_cgelov.png" alt="Imagen 9" class="carrusel-imagen">
+            <!-- Video en el carrusel -->
+        
+        </div>
+
+        <!-- Botones para controlar el carrusel -->
+        <div class="botones">
+            <button class="boton" id="anterior">Anterior</button>
+            <button class="boton" id="siguienteBoton">Siguiente</button>
+        </div>
+    </main>
+
+    <script>
+        const carruselItems = document.querySelectorAll('.carrusel-imagen, .carrusel-video');
+        const totalItems = carruselItems.length; // Total de elementos en el carrusel (imágenes + video)
+        let indiceActual = 0;
+
+        // Mostrar el primer elemento
+        carruselItems[indiceActual].style.display = 'block';
+
+        // Función para actualizar la visibilidad de los elementos del carrusel
+        function actualizarCarrusel() {
+            // Ocultar todos los elementos
+            for (let i = 0; i < totalItems; i++) {
+                carruselItems[i].style.display = 'none';
+            }
+            // Mostrar el elemento actual
+            carruselItems[indiceActual].style.display = 'block';
+        }
+
+        // Evento para el botón Siguiente
+        document.getElementById('siguienteBoton').addEventListener('click', () => {
+            indiceActual = (indiceActual + 1) % totalItems; // Aumenta el índice actual
+            actualizarCarrusel(); // Actualiza la posición del carrusel
+        });
+
+        // Evento para el botón Anterior
+        document.getElementById('anterior').addEventListener('click', () => {
+            indiceActual = (indiceActual - 1 + totalItems) % totalItems; // Disminuye el índice actual
+            actualizarCarrusel(); // Actualiza la posición del carrusel
+        });
+        
+        // Selecciona todas las imágenes
+        const images = document.querySelectorAll('img');
+
+        // Añade un event listener para evitar la descarga con pulsación larga
+        images.forEach(image => {
+            image.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Desactiva el menú contextual en imágenes
+            });
+        });
+    </script>
+    </script>
+</body>
+</html>

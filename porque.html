@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que nos cuesta escuchar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Agregar estilos para el carrusel */
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Mantener centrado */
+            width: 30%; /* Asegúrate de que el carrusel tenga el mismo tamaño */
+            height: 600px; /* Ajusta esta altura según el tamaño de tus imágenes */
+            position: relative; /* Para posicionar las flechas */
+            overflow: hidden; /* Evitar que el contenido se desborde */
+        }
+
+        .carousel img, .carousel video {
+            width: 100%; /* Asegura que las imágenes y el video ocupen el 100% del espacio disponible */
+            height: auto;
+            object-fit: contain;
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        /* Clase para personalizar el tamaño del video */
+        .custom-size {
+            width: 80%; /* Ajusta este valor según tus necesidades */
+            height: auto; /* Mantener el aspecto original */
+            max-width: 100%; /* Asegúrate de que no supere el tamaño del contenedor */
+            margin-left: 0px; /* Mueve el video hacia la derecha */
+        }
+
+        /* Asegura que el contenedor mantenga siempre el mismo tamaño */
+        .media-container {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Primer fila de imágenes (pie de página) con enlaces -->
+        <div class="row-top">
+            <a href="acerca.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310302/76qgewM_syq3cn.png" alt="Imagen 1" class="image-top"></a>
+            <a href="index.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="image-top"></a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1.html"target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Otra Imagen" class="image-top"></a>
+        </div>
+        <!-- Segunda fila de imágenes grandes -->
+        <div class="row-full">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320770/G4vfpWU_zridqa.jpg" alt="Contenedor 1" class="image-full">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740320795/GBoD4qz_n7zpds.png" alt="Contenedor 2" class="image-full">
+            <div class="carousel">
+                <button class="prev" onclick="changeMedia(-1)">&#10094;</button> <!-- Flecha izquierda -->
+                <div id="mediaContainer" class="media-container"></div> <!-- Contenedor para la imagen o video -->
+                <button class="next" onclick="changeMedia(1)">&#10095;</button> <!-- Flecha derecha -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de medios (imágenes y video)
+        const media = [ 
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740320823/nyOxdTA_unky3u.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740320851/MLES9iF_xrqdbw.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740320894/2vlCUHw_rk0krc.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740320921/fwxcpmQ_ifevit.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740320990/1ixakSH_pkqkts.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740321014/yHbZQlx_v8frta.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740321038/1mS8Bwp_kupnsa.jpg',
+            'https://res.cloudinary.com/dbwezmju6/image/upload/v1740321063/deSjaE3_fhoqy6.jpg',
+            'assets/t10.mp4' // Video añadido
+        ];
+
+        let currentIndex = 0;
+        const mediaContainer = document.getElementById('mediaContainer');
+
+        // Función para cambiar entre imágenes y video
+        function changeMedia(direction) {
+            currentIndex = (currentIndex + direction + media.length) % media.length; // Actualiza el índice
+            const currentMedia = media[currentIndex];
+
+            // Verifica si es un video o una imagen
+            if (currentMedia.endsWith('.mp4')) {
+                mediaContainer.innerHTML = `<video class="media-container custom-size" src="${currentMedia}" autoplay muted loop></video>`;
+            } else {
+                mediaContainer.innerHTML = `<img class="media-container" src="${currentMedia}" alt="Imagen carrusel">`;
+            }
+        }
+
+        // Inicializa con el primer elemento
+        changeMedia(0);
+
+        // Bloquear clic derecho en todas las imágenes y videos
+        document.addEventListener('contextmenu', function (event) {
+            if (event.target.tagName === 'IMG' || event.target.tagName === 'VIDEO') {
+                event.preventDefault(); // Evita que se abra el menú contextual en imágenes y videos
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de mi</title>
+    <link rel="icon" href="assets/icono.png" type="image/png">
+    <style>
+        /* Evitar selección de imágenes y su arrastre */
+        img {
+            -webkit-user-drag: none; /* Evitar arrastrar imágenes en Chrome/Safari */
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            -webkit-touch-callout: none; /* Evitar menú contextual en móviles */
+            -webkit-user-select: none; /* Evitar selección al mantener pulsado */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none; /* Evitar el recuadro azul en imágenes */
+        }
+
+        a {
+            outline: none; /* Evitar el recuadro azul en enlaces */
+        }
+
+        a:focus, img:focus {
+            outline: none; /* Asegura que no haya recuadro azul cuando las imágenes o enlaces reciben enfoque */
+        }
+
+        /* Evitar borde azul en móviles al hacer tap en la imagen */
+        img, a {
+            -webkit-tap-highlight-color: transparent; /* Safari y Android */
+        }
+
+        /* Contenedor principal centrado */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* Altura completa de la ventana */
+            text-align: center;
+            padding: 0 20px; /* Espaciado lateral para pantallas pequeñas */
+            margin-bottom: 80px; /* Espaciado en la parte inferior */
+            margin-top: 19px;
+        }
+
+        /* Encabezado de dos imágenes (siguiente y menú) en una fila */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 600px; /* Ancho máximo para pantallas grandes */
+            margin-bottom: -40px; /* Espaciado entre el encabezado y la imagen info */
+        }
+
+        .encabezado img {
+            width: 140%; /* Ajustar el tamaño según sea necesario */
+            max-width: 80px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imagen principal info1.png */
+        .info {
+            margin-bottom: -320px; /* Espacio debajo de la imagen principal */
+        }
+
+        .info img {
+            width: 300%; /* Ajustar tamaño de info1.png */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+
+        /* Imágenes en columna (cv.png y flecha.png) */
+        .imagenes-columna {
+            margin-bottom: 110px;
+            margin-top: 60%;
+        }
+
+        .imagenes-columna img {
+            display: block;
+            margin: 0 auto; /* Centrar la imagen */
+            width: 110%; /* Ajustar tamaño según tus necesidades */
+            max-width: 150px; /* Limitar el tamaño máximo */
+        }
+
+        /* Contenedor de tres imágenes en la misma fila */
+        .imagenes-fila {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; /* Ajustado al 100% para pantallas pequeñas */
+            max-width: 300px; /* Ancho máximo para pantallas grandes */
+            margin-top: -80px;
+
+        }
+
+        .imagenes-fila img {
+            width: 100%; /* Ajustar el tamaño de las imágenes en fila */
+            max-width: 300px; /* Limitar el tamaño máximo */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Encabezado con tres imágenes (siguiente y menú) -->
+        <div class="encabezado">
+            <a href="ilusmovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310302/76qgewM_syq3cn.png" alt="Siguiente" class="imagen" id="siguiente">
+            </a>
+            <a href="iniciomovil.html">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740309977/D95CI02_nn9hnc.png" alt="Menú" class="imagen" id="menu">
+            </a>
+            <a href="https://www.instagram.com/sotosolo_/?__pwa=1">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310001/xrVCTs5_sj5879.png" alt="Instagram" class="imagen" id="insta">
+            </a>
+        </div>
+
+        <!-- Imagen principal info1.png -->
+        <div class="info">
+            <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310374/zRp3kW0_jx4ly8.png" alt="Info1" class="imagen" id="info1">
+        </div>
+
+        <!-- Otras imágenes en columna (cv.png y flecha.png) -->
+        <div class="imagenes-columna">
+            <a href="https://drive.google.com/file/d/1v2LUtZB6JY33qnT-Qt_oFQA7FhEYlYQT/view?usp=sharing" download>
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310409/8b3lGaH_kwsxhm.png" alt="CV" class="imagen" id="cv">
+           
+        </div>
+
+        <!-- Tres imágenes en la misma fila (flecha1.png y dos más) -->
+        <div class="imagenes-fila">
+            <a href="mailto:cmartinz1995@gmail.com">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310509/iqBnSMY_vyg3ek.png" alt="Flecha 1" class="imagen" id="flecha1">
+            </a>
+            <a href="https://www.behance.net/xaviersoto">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310532/ADO2irV_rfxszo.png" alt="Extra 1" class="imagen" id="extra1">
+            </a>
+            <a href="https://www.linkedin.com/in/xavier-sotoo">
+                <img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1740310552/z7R9u0e_aj49rg.png" alt="Extra 2" class="imagen" id="extra2">
+            </a>
+            
+        </div>
+    </main>
+     <!-- JavaScript para evitar el menú contextual en imágenes -->
+     <script>
+        // Selecciona todas las imágenes
+        const images = document.querySelectorAll('img');
+
+        // Añade un event listener para evitar la descarga con pulsación larga
+        images.forEach(image => {
+            image.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // Desactiva el menú contextual en imágenes
+            });
+        });
+    </script>
+</body>
+</html>

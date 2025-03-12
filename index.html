@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Estilos compartidos -->
+   
+   <link rel="icon" href="assets/icono.png" type="image/png">
+
+   
+   <script>
+
+        
+        // Función para detectar si es móvil
+        function isMobile() {
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+        }
+
+        // Redirección a la versión móvil si es necesario
+        if (isMobile()) {
+            window.location.href = "iniciomovil.html"; // Redireccionar a la versión móvil
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Contenido para escritorio -->
+    <div id="desktop-content">
+        <div class="container">
+            <div class="row">
+                <a href="acerca.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958022/1_xnbipu.png" alt="Imagen 1" class="image" id="img1"></a>
+                <a href="https://chingaderasdesoto.com/"target="_blank"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958854/2_aznhqn.png" alt="Imagen 2" class="image" id="img2"></a>
+                <a href="ilusmenu.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958854/9_eaecvz.png" alt="Imagen 9" class="image" id="img9"></a>
+            </div>
+            <div class="row">
+                <a href="logos.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958854/3_icwrps.png" alt="Imagen 3" class="image" id="img3"></a>
+                <a href="identidad.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958854/4_rmfllq.png" alt="Imagen 4" class="image" id="img4"></a>
+                <a href="premios.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958855/5_iyte7y.png" alt="Imagen 5" class="image" id="img5"></a>
+            </div>
+            <div class="row">
+                <a href="3d.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739959746/3d-01_qn7xh8.png" alt="Imagen 6" class="image" id="img6"></a>
+                <a href="desoido.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958855/7_nei2fq.png" alt="Imagen 7" class="image" id="img7"></a>
+                <a href="porque.html"><img src="https://res.cloudinary.com/dbwezmju6/image/upload/v1739958855/8_bppcew.png" alt="Imagen 8" class="image" id="img8"></a>
+            </div>
+        </div>
+        <div id="customCursor"></div> <!-- Cursor personalizado -->
+    </div>
+
+    <script src="js/java.js"></script> <!-- Para escritorio -->
+
+    
+</body>
+</html>
